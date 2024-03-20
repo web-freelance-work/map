@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    height: 60px;
+}
+
+.sidebar {
+    list-style-type: none;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 0;
+    width: 400px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    overflow-x: visible;
+    position: absolute;
+    font-size: 12px;
+    z-index: 200;
+    transition: width 0.5s ease;
+}
+
+.side-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 303px;
+}
+
+.nav-link {
+    font-size: 16pt;
+}
+
+.card img {
+    width: 270px;
+    height: 190px;
+    margin-bottom: 20px;
+}
+
+.search_bar {
+    width: 500px;
+    border-color: #855b62;
+}
+
+#place_intro {
+    display: flex;
+}
+
+#place_intro a {
+    text-decoration: none;
+    margin-top: 4px;
+    margin-left: 5px;
+    color: grey;
+}
+
+#category_sel {
+    margin-bottom: 10px;
+}
+
+#search_btn {
+    background: #855b62;
+    color: white;
+    border-color: white;
+}
+
+
+#place_intro {
+    display: flex;
+}
+
+#place_intro a {
+    text-decoration: none;
+    margin-top: 4px;
+    margin-left: 5px;
+    color: grey;
+}
+
+#category_sel {
+    margin-bottom: 10px;
+}
+
+#search_btn {
+    background: #855b62;
+    color: white;
+    border-color: white;
+}
+
+/* 추가된 스타일 */
+#map {
+    width: 100%;
+    height: calc(100vh - 60px);
+    position: relative;
+    /* 지도와 버튼을 겹쳐서 배치하기 위해 position 속성 추가 */
+}
+
+#custom-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    /* 이 값을 더 높게 설정하세요 */
+    background-color: #c32424;
+    padding: 10px 20px;
+    border: 1px solid #d02b2b;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#navbarSupportedContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 992px){
+        display: none;
+    }
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 50%;
+    /* 사이드바의 너비와 같게 설정해야 합니다.
+       사이드바가 접힐 때, 버튼도 같이 이동하기 때문에 
+       버튼의 left 위치를 '400px - 버튼의 너비'로 설정합니다. */
+    left: 400px;
+    z-index: 5000;
+    background-color: white;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-left: none;
+    color: lightgray;
+    cursor: pointer;
+    transition: left 0.5s ease, transform 0.5s ease;
+    border-radius: 0 5px 5px 0;
+}
+
+.toggle-btn:hover {
+    color: lightgray;
+    border: 1px solid lightgray;
+    border-left: none;
+}
+
+.sidebar-collapsed + .toggle-btn {
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+.sidebar-collapsed {
+    width: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.top-bar {
+    position: absolute;
+    left: 400px; /* sidebar 너비만큼 왼쪽에서부터 떨어져 있어야 합니다. */
+    top: 60px; /* navbar 높이만큼 위에서부터 떨어져 있어야 합니다. */
+    width: 500px; /* 전체 너비에서 sidebar 너비를 뺀 만큼의 너비 */
+    height: 50px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between; /* 내부 아이템 간격을 균등하게 배치 */
+    align-items: center;
+    background-color: white; /* 바의 배경색, 실제 사이트의 색상과 일치해야 합니다. */
+    transition: left 0.5s ease; /* 부드러운 이동을 위한 트랜지션 */
+    z-index: 2000;
+    font-weight: 700;
+}
+
+.right-bar {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 80px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    z-index: 2000;
+    font-weight: 700;
+}
+
+.home-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    z-index: 6000;
+    object-fit: cover;
+}
+
+.bar-item {
+    padding: 0 10px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.sidebar-collapsed ~ .top-bar {
+    left: 0;
+}
+
+#submit {
+    margin: 0 10px;
+}
+
+.nav-link.dropdown-toggle.more::after {
+    display: none;
+}
+
+.dropdown-menu a {
+    font-weight: 700;
+}
